@@ -139,7 +139,7 @@ Changes to Outputs:
 ```
 PS C:\swararoy\2023\code\GITOPS\AKS_INSTALL\learn-terraform-provision-aks-cluster> C:\swararoy\installers\terraform\terraform apply
 random_pet.prefix: Refreshing state... [id=talented-silkworm]
-azurerm_resource_group.default: Refreshing state... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg]
+azurerm_resource_group.default: Refreshing state... [id=/subscriptions/278661536/resourceGroups/talented-silkworm-rg]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -215,7 +215,7 @@ azurerm_kubernetes_cluster.default: Creating...
 azurerm_kubernetes_cluster.default: Still creating... [10s elapsed]
 azurerm_kubernetes_cluster.default: Still creating... [4m20s elapsed]
 azurerm_kubernetes_cluster.default: Still creating... [4m30s elapsed]
-azurerm_kubernetes_cluster.default: Creation complete after 4m38s [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
+azurerm_kubernetes_cluster.default: Creation complete after 4m38s [id=/subscriptions/27860a6/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
@@ -228,8 +228,8 @@ resource_group_name = "talented-silkworm-rg"
 ```
 PS C:\swararoy\2023\code\GITOPS\AKS_INSTALL\learn-terraform-provision-aks-cluster> C:\swararoy\installers\terraform\terraform destroy                         
 random_pet.prefix: Refreshing state... [id=talented-silkworm]
-azurerm_resource_group.default: Refreshing state... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg]
-azurerm_kubernetes_cluster.default: Refreshing state... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
+azurerm_resource_group.default: Refreshing state... [id=/subscriptions/27868e27af61536/resourceGroups/talented-silkworm-rg]
+azurerm_kubernetes_cluster.default: Refreshing state... [id=/subscriptions/2787af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   - destroy
@@ -243,7 +243,7 @@ Terraform will perform the following actions:
       - dns_prefix                          = "talented-silkworm-k8s" -> null
       - enable_pod_security_policy          = false -> null
       - fqdn                                = "talented-silkworm-k8s-b08awjsh.hcp.westus2.azmk8s.io" -> null
-      - id                                  = "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks" -> null
+      - id                                  = "/subscriptions/1536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks" -> null
       - image_cleaner_enabled               = false -> null
       - image_cleaner_interval_hours        = 48 -> null
       - kube_admin_config                   = (sensitive value) -> null
@@ -315,7 +315,7 @@ Terraform will perform the following actions:
 
           - load_balancer_profile {
               - effective_outbound_ips      = [
-                  - "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/MC_talented-silkworm-rg_talented-silkworm-aks_westus2/providers/Microsoft.Network/publicIPAddresses/44c09cbb-b515-462a-b96a-2e56f39ec4c2",
+                  - "/subscriptions/278601536/resourceGroups/MC_talented-silkworm-rg_talented-silkworm-aks_westus2/providers/Microsoft.Network/publicIPAddresses/44c09cbb-b515-462a-b96a-2e56f39ec4c2",
                 ] -> null
               - idle_timeout_in_minutes     = 0 -> null
               - managed_outbound_ip_count   = 1 -> null
@@ -334,7 +334,7 @@ Terraform will perform the following actions:
 
   # azurerm_resource_group.default will be destroyed
   - resource "azurerm_resource_group" "default" {
-      - id       = "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg" -> null
+      - id       = "/subscriptions/27860a0af61536/resourceGroups/talented-silkworm-rg" -> null
       - location = "westus2" -> null
       - name     = "talented-silkworm-rg" -> null
       - tags     = {
@@ -361,12 +361,12 @@ Do you really want to destroy all resources?
 
   Enter a value: yes
 
-azurerm_kubernetes_cluster.default: Destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
-azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-.../managedClusters/talented-silkworm-aks, 10s elapsed]
-azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-.../managedClusters/talented-silkworm-aks, 3m20s elapsed]  
+azurerm_kubernetes_cluster.default: Destroying... [id=/subscriptions/27860a36/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
+azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/278683-992f-.../managedClusters/talented-silkworm-aks, 10s elapsed]
+azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/27865be0-4d83-992f-.../managedClusters/talented-silkworm-aks, 3m20s elapsed]  
 azurerm_kubernetes_cluster.default: Destruction complete after 3m21s
-azurerm_resource_group.default: Destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg]
-azurerm_resource_group.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-...36/resourceGroups/talented-silkworm-rg, 1m50s elapsed]    azurerm_resource_group.default: Destruction complete after 1m57s
+azurerm_resource_group.default: Destroying... [id=/subscriptions/27860a36/resourceGroups/talented-silkworm-rg]
+azurerm_resource_group.default: Still destroying... [id=/subscriptions/27860a03-5f-...36/resourceGroups/talented-silkworm-rg, 1m50s elapsed]    azurerm_resource_group.default: Destruction complete after 1m57s
 random_pet.prefix: Destroying... [id=talented-silkworm]
 random_pet.prefix: Destruction complete after 0s
 
