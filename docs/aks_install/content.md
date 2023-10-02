@@ -4,16 +4,14 @@
 | ----------- | ----------- |
 | 1 | Introduction |
 | 2 | Terraform Module  |
-| 3 | Terraform Workflow - Init  |
-| 4 | Terraform Workflow - Plan  |
-| 5 | Terraform Workflow - Apply |
-| 6 | Walthrough on Azure Portal |
-| 7 | Walthrough via az CLI |
-| 8 | kubectl connection |
-| 9 | Setup Azure Container Registry |
-| 10| Sample REST API Application |
-| 11| Installation of Ingress Controller |
-| 12| Access API over internet (Public IP) |
+| 3 | Terraform Workflow - Init, Plan, Apply, Delete |
+| 4 | Walthrough on Azure Portal |
+| 5 | Walthrough via az CLI |
+| 6 | kubectl connection |
+| 7 | Setup Azure Container Registry |
+| 8 | Sample REST API Application |
+| 9 | Installation of Ingress Controller |
+| 10| Access API over internet (Public IP) |
 
 
 ### 2. Terraform Module
