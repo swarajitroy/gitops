@@ -226,6 +226,8 @@ kubernetes_cluster_name = "talented-silkworm-aks"
 resource_group_name = "talented-silkworm-rg"
 ```
 
+### 4. Walthrough on Azure Portal
+
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/847cfe8b-9e91-4d66-b5f8-0d8f0b23c9aa)
 
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/5f756aa2-2fff-4191-b719-6a4fdbc57d98)
