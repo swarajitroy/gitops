@@ -6,12 +6,11 @@
 | 2 | Terraform Module  |
 | 3 | Terraform Workflow - Init, Plan, Apply, Delete |
 | 4 | Walthrough on Azure Portal |
-| 5 | Walthrough via az CLI |
-| 6 | kubectl connection |
-| 7 | Setup Azure Container Registry |
-| 8 | Sample REST API Application |
-| 9 | Installation of Ingress Controller |
-| 10| Access API over internet (Public IP) |
+| 5 | kubectl connection |
+| 6 | Setup Azure Container Registry |
+| 7 | Sample REST API Application |
+| 8 | Installation of Ingress Controller |
+| 9 | Access API over internet (Public IP) |
 
 
 ### 2. Terraform Module
@@ -232,3 +231,9 @@ resource_group_name = "talented-silkworm-rg"
 
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/5f756aa2-2fff-4191-b719-6a4fdbc57d98)
 
+### 5. kubectl configuration
+
+```
+az aks get-credentials --resource-group talented-silkworm-rg --name talented-silkworm-aks --file kubeconfig-ss
+Merged "talented-silkworm-aks" as current context in kubeconfig-ss
+```
