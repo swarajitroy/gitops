@@ -16,7 +16,7 @@
 ### 2. Terraform Module
 https://developer.hashicorp.com/terraform/tutorials/kubernetes/aks
 
-### 3. Terraform Workflow - Init, Plan, Apply, Delete
+### 3. Terraform Workflow - Init, Plan, Apply, Destroy
 ```
 C:\swararoy\installers\terraform\terraform init   
 
@@ -223,6 +223,154 @@ Outputs:
 
 kubernetes_cluster_name = "talented-silkworm-aks"
 resource_group_name = "talented-silkworm-rg"
+```
+
+```
+PS C:\swararoy\2023\code\GITOPS\AKS_INSTALL\learn-terraform-provision-aks-cluster> C:\swararoy\installers\terraform\terraform destroy                         
+random_pet.prefix: Refreshing state... [id=talented-silkworm]
+azurerm_resource_group.default: Refreshing state... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg]
+azurerm_kubernetes_cluster.default: Refreshing state... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be destroyed
+  - resource "azurerm_kubernetes_cluster" "default" {
+      - api_server_authorized_ip_ranges     = [] -> null
+      - custom_ca_trust_certificates_base64 = [] -> null
+      - dns_prefix                          = "talented-silkworm-k8s" -> null
+      - enable_pod_security_policy          = false -> null
+      - fqdn                                = "talented-silkworm-k8s-b08awjsh.hcp.westus2.azmk8s.io" -> null
+      - id                                  = "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks" -> null
+      - image_cleaner_enabled               = false -> null
+      - image_cleaner_interval_hours        = 48 -> null
+      - kube_admin_config                   = (sensitive value) -> null
+      - kube_config                         = (sensitive value) -> null
+      - kube_config_raw                     = (sensitive value) -> null
+      - kubernetes_version                  = "1.26.3" -> null
+      - local_account_disabled              = false -> null
+      - location                            = "westus2" -> null
+      - name                                = "talented-silkworm-aks" -> null
+      - node_resource_group                 = "MC_talented-silkworm-rg_talented-silkworm-aks_westus2" -> null
+      - node_resource_group_id              = "/subscriptions/abc/resourceGroups/MC_talented-silkworm-rg_talented-silkworm-aks_westus2" -> null
+      - oidc_issuer_enabled                 = false -> null
+      - portal_fqdn                         = "talented-silkworm-k8s-b08awjsh.portal.hcp.westus2.azmk8s.io" -> null
+      - private_cluster_enabled             = false -> null
+      - private_cluster_public_fqdn_enabled = false -> null
+      - public_network_access_enabled       = true -> null
+      - resource_group_name                 = "talented-silkworm-rg" -> null
+      - role_based_access_control_enabled   = true -> null
+      - run_command_enabled                 = true -> null
+      - sku_tier                            = "Free" -> null
+      - tags                                = {
+          - "environment" = "Demo"
+        } -> null
+      - workload_identity_enabled           = false -> null
+
+      - default_node_pool {
+          - custom_ca_trust_enabled      = false -> null
+          - enable_auto_scaling          = false -> null
+          - enable_host_encryption       = false -> null
+          - enable_node_public_ip        = false -> null
+          - fips_enabled                 = false -> null
+          - kubelet_disk_type            = "OS" -> null
+          - max_count                    = 0 -> null
+          - max_pods                     = 110 -> null
+          - min_count                    = 0 -> null
+          - name                         = "default" -> null
+          - node_count                   = 2 -> null
+          - node_labels                  = {} -> null
+          - node_taints                  = [] -> null
+          - only_critical_addons_enabled = false -> null
+          - orchestrator_version         = "1.26.3" -> null
+          - os_disk_size_gb              = 30 -> null
+          - os_disk_type                 = "Managed" -> null
+          - os_sku                       = "Ubuntu" -> null
+          - scale_down_mode              = "Delete" -> null
+          - tags                         = {} -> null
+          - type                         = "VirtualMachineScaleSets" -> null
+          - ultra_ssd_enabled            = false -> null
+          - vm_size                      = "Standard_D2_v2" -> null
+          - zones                        = [] -> null
+        }
+
+      - network_profile {
+          - dns_service_ip    = "10.0.0.10" -> null
+          - ip_versions       = [
+              - "IPv4",
+            ] -> null
+          - load_balancer_sku = "standard" -> null
+          - network_plugin    = "kubenet" -> null
+          - outbound_type     = "loadBalancer" -> null
+          - pod_cidr          = "10.244.0.0/16" -> null
+          - pod_cidrs         = [
+              - "10.244.0.0/16",
+            ] -> null
+          - service_cidr      = "10.0.0.0/16" -> null
+          - service_cidrs     = [
+              - "10.0.0.0/16",
+            ] -> null
+
+          - load_balancer_profile {
+              - effective_outbound_ips      = [
+                  - "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/MC_talented-silkworm-rg_talented-silkworm-aks_westus2/providers/Microsoft.Network/publicIPAddresses/44c09cbb-b515-462a-b96a-2e56f39ec4c2",
+                ] -> null
+              - idle_timeout_in_minutes     = 0 -> null
+              - managed_outbound_ip_count   = 1 -> null
+              - managed_outbound_ipv6_count = 0 -> null
+              - outbound_ip_address_ids     = [] -> null
+              - outbound_ip_prefix_ids      = [] -> null
+              - outbound_ports_allocated    = 0 -> null
+            }
+        }
+
+      - service_principal {
+          - client_id     = abc" -> null
+          - client_secret = (sensitive value) -> null
+        }
+    }
+
+  # azurerm_resource_group.default will be destroyed
+  - resource "azurerm_resource_group" "default" {
+      - id       = "/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg" -> null
+      - location = "westus2" -> null
+      - name     = "talented-silkworm-rg" -> null
+      - tags     = {
+          - "environment" = "Demo"
+        } -> null
+    }
+
+  # random_pet.prefix will be destroyed
+  - resource "random_pet" "prefix" {
+      - id        = "talented-silkworm" -> null
+      - length    = 2 -> null
+      - separator = "-" -> null
+    }
+
+Plan: 0 to add, 0 to change, 3 to destroy.
+
+Changes to Outputs:
+  - kubernetes_cluster_name = "talented-silkworm-aks" -> null
+  - resource_group_name     = "talented-silkworm-rg" -> null
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+azurerm_kubernetes_cluster.default: Destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg/providers/Microsoft.ContainerService/managedClusters/talented-silkworm-aks]
+azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-.../managedClusters/talented-silkworm-aks, 10s elapsed]
+azurerm_kubernetes_cluster.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-.../managedClusters/talented-silkworm-aks, 3m20s elapsed]  
+azurerm_kubernetes_cluster.default: Destruction complete after 3m21s
+azurerm_resource_group.default: Destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-78e27af61536/resourceGroups/talented-silkworm-rg]
+azurerm_resource_group.default: Still destroying... [id=/subscriptions/27860a03-5be0-4d83-992f-...36/resourceGroups/talented-silkworm-rg, 1m50s elapsed]    azurerm_resource_group.default: Destruction complete after 1m57s
+random_pet.prefix: Destroying... [id=talented-silkworm]
+random_pet.prefix: Destruction complete after 0s
+
+Destroy complete! Resources: 3 destroyed.
 ```
 
 ### 4. Walthrough on Azure Portal
