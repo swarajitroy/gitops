@@ -2,8 +2,8 @@
 
 | Step | Details |
 | ----------- | ----------- |
-| 1 | App Registration in Azure Active Directory |
-| 2 | Suitable Terraform Module  |
+| 1 | Introduction |
+| 2 | Terraform Module  |
 | 3 | Terraform Workflow - Init  |
 | 4 | Terraform Workflow - Plan  |
 | 5 | Terraform Workflow - Apply |
@@ -15,6 +15,9 @@
 | 11| Installation of Ingress Controller |
 | 12| Access API over internet (Public IP) |
 
+
+### 2. Terraform Module
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/aks
 
 ```
 C:\swararoy\installers\terraform\terraform init   
