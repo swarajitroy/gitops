@@ -139,3 +139,6 @@ Changes to Outputs:
 ```
 
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/847cfe8b-9e91-4d66-b5f8-0d8f0b23c9aa)
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/5f756aa2-2fff-4191-b719-6a4fdbc57d98)
+
