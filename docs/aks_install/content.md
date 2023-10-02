@@ -17,6 +17,7 @@
 ### 2. Terraform Module
 https://developer.hashicorp.com/terraform/tutorials/kubernetes/aks
 
+### 3. Terraform Workflow - Init, Plan, Apply, Delete
 ```
 C:\swararoy\installers\terraform\terraform init   
 
