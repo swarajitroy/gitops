@@ -4,7 +4,7 @@
 | ----------- | ----------- |
 | 1 | Introduction |
 | 2 | Terraform Module  |
-| 3 | Terraform Workflow - Init, Plan, Apply, Delete |
+| 3 | Terraform Workflow - Init, Plan, Apply, Destroy |
 | 4 | Walthrough on Azure Portal |
 | 5 | kubectl connection |
 | 6 | Setup Azure Container Registry |
@@ -236,4 +236,13 @@ resource_group_name = "talented-silkworm-rg"
 ```
 az aks get-credentials --resource-group talented-silkworm-rg --name talented-silkworm-aks --file kubeconfig-ss
 Merged "talented-silkworm-aks" as current context in kubeconfig-ss
+```
+
+Copy the file into $HOME/.kube/config
+
+```
+kubectl get nodes
+NAME                              STATUS   ROLES   AGE   VERSION
+aks-default-37703709-vmss000000   Ready    agent   29m   v1.26.3
+aks-default-37703709-vmss000001   Ready    agent   29m   v1.26.3
 ```
