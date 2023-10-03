@@ -3,8 +3,12 @@
 | # | Section |  
 | ----------- | ----------- | 
 | 1 | Training and Certication | 
+| 2 | Mordern CI/CD Platforms | 
+| 3 | Books |
+
 
 ### Training and Certication 
+---
 
 Codefresh offers. https://learning.codefresh.io/start
 
@@ -12,6 +16,7 @@ Codefresh offers. https://learning.codefresh.io/start
 
 
 ### Mordern CI/CD Platforms
+---
 
 | # | Name | Link | 
 | ----------- | ----------- | ----------- |
@@ -21,6 +26,7 @@ Codefresh offers. https://learning.codefresh.io/start
 
 
 ### Books 
+---
 
 | # | Book Name | Link | Description |
 | ----------- | ----------- | ----------- | ----------- |
