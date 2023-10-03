@@ -3,9 +3,9 @@
 
 ### Mordern CI/CD Platforms
 
-| # | Name | Link | Description |
-| ----------- | ----------- | ----------- | ----------- |
-| 1 | CodeFresh | https://codefresh.io/
+| # | Name | Link | 
+| ----------- | ----------- | ----------- |
+| 1 | CodeFresh | https://codefresh.io/ |
 
 
 ### Books 
