@@ -10,5 +10,5 @@
  
 - [Progressive Delivery - Argo Rollout]
       
-- [References]
+- [References](https://github.com/swarajitroy/gitops/blob/main/docs/references/content.md)
 
