@@ -6,6 +6,8 @@
 | # | Name | Link | 
 | ----------- | ----------- | ----------- |
 | 1 | CodeFresh | https://codefresh.io/ |
+| 2 | Harness | https://www.harness.io/ |
+| 3 | Akuity | https://akuity.io/ |
 
 
 ### Books 
