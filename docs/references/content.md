@@ -1,5 +1,15 @@
 ## References
 
+| # | Section |  
+| ----------- | ----------- | 
+| 1 | Training and Certication | 
+
+### Training and Certication 
+
+Codefresh offers. https://learning.codefresh.io/start
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/2447a2d4-ba48-4ab4-9f46-0478a4e743ed)
+
 
 ### Mordern CI/CD Platforms
 
