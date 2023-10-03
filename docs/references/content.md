@@ -1,6 +1,13 @@
 ## References
 
 
+### Mordern CI/CD Platforms
+
+| # | Name | Link | Description |
+| ----------- | ----------- | ----------- | ----------- |
+| 1 | CodeFresh | https://codefresh.io/
+
+
 ### Books 
 
 | # | Book Name | Link | Description |
