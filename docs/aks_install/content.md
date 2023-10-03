@@ -394,3 +394,12 @@ NAME                              STATUS   ROLES   AGE   VERSION
 aks-default-37703709-vmss000000   Ready    agent   29m   v1.26.3
 aks-default-37703709-vmss000001   Ready    agent   29m   v1.26.3
 ```
+
+### 6. Install Azure Container Registry 
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
+
+```
+New-Item -Path Env:REGISTRY_NAME -Value 'swarajitregistry.azurecr.io'
+
+```
