@@ -396,10 +396,12 @@ aks-default-37703709-vmss000001   Ready    agent   29m   v1.26.3
 ```
 
 ### 6. Install Azure Container Registry 
+---
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
 
 ### 7. Sample Application
+---
 
 https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
 https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
@@ -427,6 +429,7 @@ redis-replica   ClusterIP   10.0.141.102   <none>        6379/TCP       50s
 
 
 ### 8. Installation of Ingress Controller & Creating Ingress
+---
 
 https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
 
@@ -440,7 +443,9 @@ https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-e
  
 
 ### 9. Access Application over internet (Public IP)
+---
 
-![image](https://github.com/swarajitroy/gitops/assets/20844803/63d67a2f-3873-4b3a-a79c-6fcd18de4a01)
+![image](https://github.com/swarajitroy/gitops/assets/20844803/37bfcbcb-2aec-4b3b-9e45-3e33c096de3b)
+
 
 
