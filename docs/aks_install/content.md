@@ -433,15 +433,9 @@ https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-e
 | Step | Name | Details |
 | ----------- | ----------- |  ------ |
 | 1 | Enable Azure Application Gateway in the AKS | ![image](https://github.com/swarajitroy/gitops/assets/20844803/58dfaefa-f305-40d0-9e61-5d1c1c9ae3f9) |
-
-
-
-
-![image](https://github.com/swarajitroy/gitops/assets/20844803/d22ab9fa-ea59-4f95-ac0e-124d661f695c)
-
-![image](https://github.com/swarajitroy/gitops/assets/20844803/9a149447-9e24-459e-b389-4e8889ffca3e)
-
-```
+| 2 | Azure Application Gateway Setting 1 | ![image](https://github.com/swarajitroy/gitops/assets/20844803/d22ab9fa-ea59-4f95-ac0e-124d661f695c) |
+| 3 | Azure Application Gateway Setting 2 | ![image](https://github.com/swarajitroy/gitops/assets/20844803/9a149447-9e24-459e-b389-4e8889ffca3e) |
+| 4 | Setting up an Ingress | ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -459,7 +453,16 @@ spec:
             name: frontend
             port:
               number: 80
-```
+``` |
+
+
+
+
+
+
+
+
+
 
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/f8bc1cf1-4f2f-4229-9061-d5876fe8807f)
 
