@@ -430,8 +430,12 @@ redis-replica   ClusterIP   10.0.141.102   <none>        6379/TCP       50s
 
 https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
 
-![image](https://github.com/swarajitroy/gitops/assets/20844803/58dfaefa-f305-40d0-9e61-5d1c1c9ae3f9)
-Enable Azure Application Gateway in the AKS
+| Step | Name | Details |
+| ----------- | ----------- |  ------ |
+| 1 | Enable Azure Application Gateway in the AKS | ![image](https://github.com/swarajitroy/gitops/assets/20844803/58dfaefa-f305-40d0-9e61-5d1c1c9ae3f9) |
+
+
+
 
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/d22ab9fa-ea59-4f95-ac0e-124d661f695c)
 
