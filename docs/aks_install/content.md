@@ -8,9 +8,9 @@
 | 4 | Walthrough on Azure Portal |
 | 5 | kubectl connection |
 | 6 | Setup Azure Container Registry |
-| 7 | Sample REST API Application |
-| 8 | Installation of Ingress Controller |
-| 9 | Access API over internet (Public IP) |
+| 7 | Sample Application |
+| 8 | Installation of Ingress Controller & Creating Ingress |
+| 9 | Access Application over internet (Public IP) |
 
 
 ### 2. Terraform Module
@@ -399,84 +399,68 @@ aks-default-37703709-vmss000001   Ready    agent   29m   v1.26.3
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
 
+### 7. Sample Application
 
-### 8. Installation of Ingress Controller
-
-First - ensure you have helm installed.
-
-```
-C:\swararoy\installers\helm\helm version
-version.BuildInfo{Version:"v3.13.0", GitCommit:"825e86f6a7a38cef1112bfa606e4127a706749b1", GitTreeState:"clean", GoVersion:"go1.20.8"}
-```
-
-Next get a public IP created
+https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
+https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
 
 ```
-az network public-ip create --resource-group AKSPublicIP_RG  --name myAKSPublicIPForIngress --sku Standard  --allocation-method static
-```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook/all-in-one/guestbook-all-in-one.yaml
+service/redis-master created
+deployment.apps/redis-master created
+service/redis-replica created
+deployment.apps/redis-replica created
+service/frontend created
+deployment.apps/frontend created
 
-```
-kubectl create namespace ingress-basic
-namespace/ingress-basic created
-```
-```
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm repo add stable https://charts.helm.sh/stable
-helm repo update
 ```
 
 ```
-C:\swararoy\installers\helm\helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-basic --set controller.replicaCount=2 --set controller.nodeSelector."kubernetes\.io/os"=linux --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux --set controller.service.externalTrafficPolicy=Local --set controller.service.loadBalancerIP="280.3.15.161" 
-NAME: ingress-nginx
-LAST DEPLOYED: Wed Oct  4 14:40:19 2023
-NAMESPACE: ingress-basic
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-The ingress-nginx controller has been installed.
-It may take a few minutes for the LoadBalancer IP to be available.
-You can watch the status by running 'kubectl --namespace ingress-basic get services -o wide -w ingress-nginx-controller'
+kubectl get svc
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+frontend        NodePort    10.0.177.47    <none>        80:31751/TCP   48s
+kubernetes      ClusterIP   10.0.0.1       <none>        443/TCP        46m
+redis-master    ClusterIP   10.0.245.83    <none>        6379/TCP       51s
+redis-replica   ClusterIP   10.0.141.102   <none>        6379/TCP       50s
 
-An example Ingress that makes use of the controller:
-  apiVersion: networking.k8s.io/v1
-  kind: Ingress
-  metadata:
-    name: example
-    namespace: foo
-  spec:
-    ingressClassName: nginx
-    rules:
-      - host: www.example.com
-        http:
-          paths:
-            - pathType: Prefix
-              backend:
-                service:
-                  name: exampleService
-                  port:
-                    number: 80
-              path: /
-    # This section is only required if TLS is to be enabled for the Ingress
-    tls:
-      - hosts:
-        - www.example.com
-        secretName: example-tls
+```
 
-If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
 
-  apiVersion: v1
-  kind: Secret
-  metadata:
-    name: example-tls
-    namespace: foo
-  data:
-    tls.crt: <base64 encoded cert>
-    tls.key: <base64 encoded key>
-  type: kubernetes.io/tls
+### 8. Installation of Ingress Controller & Creating Ingress
+
+https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/58dfaefa-f305-40d0-9e61-5d1c1c9ae3f9)
+Enable Azure Application Gateway in the AKS
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/d22ab9fa-ea59-4f95-ac0e-124d661f695c)
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/9a149447-9e24-459e-b389-4e8889ffca3e)
+
 ```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
 ```
-kubectl --namespace ingress-basic get services -o wide -w ingress-nginx-controller
-NAME                       TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE     SELECTOR
-ingress-nginx-controller   LoadBalancer   10.0.206.133   <pending>     80:31907/TCP,443:32271/TCP   2m26s   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
-```
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/f8bc1cf1-4f2f-4229-9061-d5876fe8807f)
+
+### 9. Access Application over internet (Public IP)
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/63d67a2f-3873-4b3a-a79c-6fcd18de4a01)
+
+
