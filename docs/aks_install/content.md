@@ -436,19 +436,8 @@ https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-e
 | 2 | Azure Application Gateway Setting 1 | ![image](https://github.com/swarajitroy/gitops/assets/20844803/d22ab9fa-ea59-4f95-ac0e-124d661f695c) |
 | 3 | Azure Application Gateway Setting 2 | ![image](https://github.com/swarajitroy/gitops/assets/20844803/9a149447-9e24-459e-b389-4e8889ffca3e) |
 | 4 | Setting up an Ingress | ![image](https://github.com/swarajitroy/gitops/assets/20844803/a4652e96-20e6-457e-87e5-f3a0a55896e6) |
-
- |
-
-
-
-
-
-
-
-
-
-
-![image](https://github.com/swarajitroy/gitops/assets/20844803/f8bc1cf1-4f2f-4229-9061-d5876fe8807f)
+| 5 | Viewing the Ingress | ![image](https://github.com/swarajitroy/gitops/assets/20844803/f8bc1cf1-4f2f-4229-9061-d5876fe8807f) |
+ 
 
 ### 9. Access Application over internet (Public IP)
 
