@@ -73,3 +73,10 @@ networkpolicy.networking.k8s.io/argocd-repo-server-network-policy created
 networkpolicy.networking.k8s.io/argocd-server-network-policy created
 
 ```
+```
+kubectl apply -f argoingress.yaml
+ingress.networking.k8s.io/argocd-server-ingress created
+
+kubectl port-forward svc/argocd-server -n argocd 8080:443  
+
+```
