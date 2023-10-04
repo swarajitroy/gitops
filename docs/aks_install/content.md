@@ -399,7 +399,18 @@ aks-default-37703709-vmss000001   Ready    agent   29m   v1.26.3
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
 
-```
-New-Item -Path Env:REGISTRY_NAME -Value 'swarajitregistry.azurecr.io'
 
+### 8. Installation of Ingress Controller
+
+First - ensure you have helm installed.
+
+```
+C:\swararoy\installers\helm\helm version
+version.BuildInfo{Version:"v3.13.0", GitCommit:"825e86f6a7a38cef1112bfa606e4127a706749b1", GitTreeState:"clean", GoVersion:"go1.20.8"}
+```
+
+Next get a public IP created
+
+```
+az network public-ip create --resource-group AKSPublicIP_RG  --name myAKSPublicIPForIngress --sku Standard  --allocation-method static
 ```
