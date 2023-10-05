@@ -87,8 +87,23 @@ networkpolicy.networking.k8s.io/argocd-repo-server-network-policy created
 networkpolicy.networking.k8s.io/argocd-server-network-policy created
 
 ```
-Then you can do a port forward 
 
-kubectl port-forward svc/argocd-server -n argocd 8080:443  
+### 5. Expose ArgoCD UI
+---
+Then you can do a port forward and make ArgoCD available in localhost.
+
+```
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+Or you can make the service/argocd-server as a loadbalancer 
+
+```
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+```
+
+Or expose it over public load balancer
+
+
+
 
 
