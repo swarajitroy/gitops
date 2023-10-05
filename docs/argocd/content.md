@@ -7,8 +7,9 @@
 | 3 | Via Helm |
 | 4 | Via Autopilot |
 | 5 | Expose ArgoCD UI |
-| 6 | ArgoCD CLI |
-| 7 | ArgoCD Authentication |
+| 6 | ArgoCD Authentication |
+| 7 | ArgoCD CLI |
+
 
 
 ### 1. Introduction 
@@ -121,8 +122,59 @@ argocd-server-metrics                     ClusterIP      10.0.123.34    <none>  
 ```
 ![image](https://github.com/swarajitroy/gitops/assets/20844803/0eae470f-9437-45e0-9724-bbf9dc38cd3d)
 
+### 6. ArgoCD Authentication 
+---
+
+The user id is admin and password is maintained in a secret called argocd-initial-admin-secret
+
+```
+kubectl get secrets -n argocd
+NAME                          TYPE     DATA   AGE
+argocd-initial-admin-secret   Opaque   1      36m
+argocd-notifications-secret   Opaque   0      37m
+argocd-secret                 Opaque   5      37m
+```
+Get the password from the secret and do a base64 decode and you will be able to login to ArgoCD over UI.
+
+![image](https://github.com/swarajitroy/gitops/assets/20844803/65243d4f-1849-4e63-8e7d-c7bf09b3ef6c)
 
 
+ ### 7. ArgoCD CLI 
+ ---
+ Use this page for installation instruction 
+ https://argo-cd.readthedocs.io/en/stable/cli_installation/ 
 
+ I have used the following for my windows laptop
 
+ ```
+$url = "https://github.com/argoproj/argo-cd/releases/download/" + $version + "/argocd-windows-amd64.exe"
+>> $output = "argocd.exe"
+>> 
+>> Invoke-WebRequest -Uri $url -OutFile $output
+```
+
+```
+C:\swararoy\installers\argocd\argocd version                               
+argocd: v2.8.4+c279299       
+  BuildDate: 2023-09-13T19:43:37Z
+  GitCommit: c27929928104dc37b937764baf65f38b78930e59
+  GitTreeState: clean
+  GoVersion: go1.20.7
+  Compiler: gc
+  Platform: windows/amd64
+time="2023-10-05T09:55:15+05:30" level=fatal msg="Argo CD server address unspecified"
+
+```
+
+```
+C:\swararoy\installers\argocd\argocd login 20.252.46.244
+WARNING: server certificate had error: tls: failed to verify certificate: x509: certificate signed by unknown authority. Proceed insecurely (y/n)? y
+Username: admin
+Password:
+'admin:login' logged in successfully
+Context '20.252.46.244' updated
+
+```
+
+ 
 
