@@ -95,6 +95,9 @@ Then you can do a port forward and make ArgoCD available in localhost.
 ```
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
+![image](https://github.com/swarajitroy/gitops/assets/20844803/a19e4680-30a3-474f-88be-e7020ab9ca96)
+
+
 Or you can make the service/argocd-server as a loadbalancer 
 
 ```
@@ -102,6 +105,22 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 ```
 
 Or expose it over public load balancer
+
+```
+kubectl get svc -n argocd
+NAME                                      TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
+argocd-applicationset-controller          ClusterIP      10.0.193.96    <none>          7000/TCP,8080/TCP            7m32s
+argocd-dex-server                         ClusterIP      10.0.174.162   <none>          5556/TCP,5557/TCP,5558/TCP   7m31s
+argocd-metrics                            ClusterIP      10.0.99.42     <none>          8082/TCP                     7m30s
+argocd-notifications-controller-metrics   ClusterIP      10.0.77.243    <none>          9001/TCP                     7m29s
+argocd-redis                              ClusterIP      10.0.70.133    <none>          6379/TCP                     7m28s
+argocd-repo-server                        ClusterIP      10.0.142.128   <none>          8081/TCP,8084/TCP            7m27s
+argocd-server                             LoadBalancer   10.0.31.249    20.252.46.244   80:31754/TCP,443:32042/TCP   16s
+argocd-server-metrics                     ClusterIP      10.0.123.34    <none>          8083/TCP                     7m25s
+
+```
+![image](https://github.com/swarajitroy/gitops/assets/20844803/0eae470f-9437-45e0-9724-bbf9dc38cd3d)
+
 
 
 
