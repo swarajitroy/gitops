@@ -11,11 +11,25 @@
 | 7 | ArgoCD Authentication |
 
 
+### 1. Introduction 
+---
+
+### 2. Via Kubernetes Manifest
+---
+
+Installation of ArgoCD on the Azure Kubernetes Service (AKS) is required to get started. We have already installed the AKS cluster.
+
+Create a namespace
 ```
 kubectl create namespace argocd
 namespace/argocd created
+```
 
+Run the Manifest Files
+
+```
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
 customresourcedefinition.apiextensions.k8s.io/applications.argoproj.io created
 customresourcedefinition.apiextensions.k8s.io/applicationsets.argoproj.io created
 customresourcedefinition.apiextensions.k8s.io/appprojects.argoproj.io created
@@ -73,10 +87,8 @@ networkpolicy.networking.k8s.io/argocd-repo-server-network-policy created
 networkpolicy.networking.k8s.io/argocd-server-network-policy created
 
 ```
-```
-kubectl apply -f argoingress.yaml
-ingress.networking.k8s.io/argocd-server-ingress created
+Then you can do a port forward 
 
 kubectl port-forward svc/argocd-server -n argocd 8080:443  
 
-```
+
