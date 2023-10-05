@@ -9,6 +9,13 @@
     - ArgoCD Application along with Helm
  
 - [Progressive Delivery - Argo Rollout]
+  - Introduction to Argo Rollout
+  - Installation and Configuration of Argo Rollout Controller
+  - Blue-Green Deployments
+  - Canary Deployments
+  - A/B Tests
+  - Automatic Rollback with Metrics
+  - ArgoCD with Argo Rollout
       
 - [References](https://github.com/swarajitroy/gitops/blob/main/docs/references/content.md)
 
