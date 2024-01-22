@@ -8,6 +8,18 @@
     - ArgoCD Application using Declarative Setup
     - ArgoCD Application along with Helm
  
+- [Argo at Scale]
+    - App of App Patterns
+    - Argo CD integration with SSO & other security aspects
+    - High Availability, Performance
+    - ApplicationSet controller
+    - Sync Waves and phases
+    - Argo Image Updater
+
+ - [Argo Ecosystem]
+   - Argo Events
+   - Argo Workflow
+      
 - [Progressive Delivery - Argo Rollout]
   - Introduction to Argo Rollout
   - Installation and Configuration of Argo Rollout Controller
